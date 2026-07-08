@@ -1,5 +1,5 @@
 const { WebSocketServer } = require('ws');
-const RoomManagerKv = require('../lib/roomManagerKv');
+const RoomManager = require('../roomManager');
 const MessageRouter = require('../messageRouter');
 const PressThrottle = require('../pressThrottle');
 const config = require('../config');
@@ -9,14 +9,9 @@ let roomManager = null;
 let messageRouter = null;
 let throttle = null;
 
-async function ensureInitialized() {
+function ensureInitialized() {
   if (roomManager) return;
-  roomManager = new RoomManagerKv();
-  try {
-    await roomManager.init();
-  } catch (e) {
-    console.error('RoomManagerKv.init error:', e.message);
-  }
+  roomManager = new RoomManager();
   throttle = new PressThrottle(config.THROTTLE_RATE);
   messageRouter = new MessageRouter(roomManager, throttle);
 }
@@ -28,7 +23,7 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  await ensureInitialized();
+  ensureInitialized();
 
   if (!wss) {
     wss = new WebSocketServer({ noServer: true });

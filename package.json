@@ -10,7 +10,6 @@
     "lint": "echo \"Error: no linter specified\" && exit 1"
   },
   "dependencies": {
-    "@vercel/kv": "^3.0.0",
     "ws": "^8.21.0"
   },
   "devDependencies": {
