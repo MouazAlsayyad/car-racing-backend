@@ -9,6 +9,9 @@
     "test": "jest --verbose",
     "lint": "echo \"Error: no linter specified\" && exit 1"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "ws": "^8.21.0"
   },
