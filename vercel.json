@@ -1,8 +1,7 @@
 {
   "functions": {
     "api/ws.js": {
-      "runtime": "nodejs@18.x",
-      "fluid": true
+      "runtime": "nodejs@18.x"
     }
   }
 }
