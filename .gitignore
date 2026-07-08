@@ -1,0 +1,20 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/.agents
+skills-lock.json
+
+# Godot imports and exports
+*.import
+export_presets.cfg
+.mono/
+*.csproj
+*.sln
+
+# Node
+/node_modules/
+/.env
+
+# OS
+.DS_Store
+Thumbs.db

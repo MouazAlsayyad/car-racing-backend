@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Car Racing Controller</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="join-screen" class="screen active">
+    <div class="screen-content">
+      <h1 class="title">Car Racing</h1>
+      <div class="input-group">
+        <label for="room-code-input">Room Code</label>
+        <input id="room-code-input" type="text" maxlength="4" placeholder="ABCD" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false">
+      </div>
+      <div class="input-group">
+        <label for="player-name-input">Your Name</label>
+        <input id="player-name-input" type="text" maxlength="12" placeholder="Enter name" autocomplete="off" autocorrect="off" spellcheck="false">
+      </div>
+      <div class="input-group">
+        <label>Choose Your Car</label>
+        <div id="car-selector" class="car-selector">
+          <div class="car-option selected" data-car-id="1">
+            <img src="/cars/car_1.png" alt="Car 1" draggable="false">
+          </div>
+          <div class="car-option" data-car-id="2">
+            <img src="/cars/car_2.png" alt="Car 2" draggable="false">
+          </div>
+          <div class="car-option" data-car-id="3">
+            <img src="/cars/car_3.png" alt="Car 3" draggable="false">
+          </div>
+          <div class="car-option" data-car-id="4">
+            <img src="/cars/car_4.png" alt="Car 4" draggable="false">
+          </div>
+        </div>
+      </div>
+      <button id="join-button" class="btn btn-primary">Join</button>
+      <div id="join-error" class="error-text"></div>
+    </div>
+  </div>
+
+  <div id="waiting-screen" class="screen">
+    <div class="screen-content">
+      <h2 class="subtitle">Room Code</h2>
+      <div id="room-code-display" class="room-code"></div>
+      <div id="status-label" class="status-label">Waiting for players...</div>
+      <div id="player-list" class="player-list"></div>
+      <button id="start-button" class="btn btn-start hidden">Start Race</button>
+    </div>
+  </div>
+
+  <div id="race-screen" class="screen">
+    <div id="tap-button" class="tap-button">
+      <span id="tap-label">TAP!</span>
+      <span id="press-counter" class="press-counter">0</span>
+    </div>
+  </div>
+
+  <div id="result-screen" class="screen">
+    <div class="screen-content">
+      <h1 class="title">Race Results</h1>
+      <div id="rankings-list" class="rankings-list"></div>
+    </div>
+  </div>
+
+  <script src="controller.js"></script>
+</body>
+</html>

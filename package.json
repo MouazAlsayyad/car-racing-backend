@@ -1,0 +1,18 @@
+{
+  "name": "car-racing-backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "jest --verbose",
+    "lint": "echo \"Error: no linter specified\" && exit 1"
+  },
+  "dependencies": {
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0"
+  }
+}
